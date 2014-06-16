@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets">
+	  
+<h:body>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Listar Alunos</title>
+	
+</h:body>
+	
+	<h:body>
+	
+		<h2>Listar Alunos</h2>
+		<h:dataTable value="#{alunoBean.alunos}" var="aluno" border="1">
+		
+			<h:column>
+				<f:facet name="header">Nome</f:facet>
+				<h:outputText value="#{aluno.nome}"/>
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Endereço</f:facet>
+				<h:outputText value="#{aluno.endereco}"/>
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Telefone</f:facet>
+				<h:outputText value="#{aluno.telefone}"/>
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Editar</f:facet>
+				
+				<h:link value="Editar" outcome="editar" includeViewParams="true">
+					<f:param name="aluno" value="#{aluno.id}"/>
+				</h:link>
+				
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Excluir</f:facet>
+				<h:form>
+					<h:commandLink value="Excluir" action="#{alunoBean.excluir(alunoBean.aluno)}"/>
+				</h:form>
+			</h:column>
+			
+		</h:dataTable>
+		<h:form>
+			<h:commandLink value="Voltar" action="index"/>
+		</h:form>
+	</h:body>
+	
+</html>
