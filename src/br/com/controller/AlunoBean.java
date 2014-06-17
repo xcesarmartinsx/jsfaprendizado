@@ -2,20 +2,18 @@ package br.com.controller;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 
-
-import br.com.dao.*;
-import br.com.model.*;
+import br.com.dao.AlunoDAO;
+import br.com.model.Aluno;
 
 @ManagedBean
-@RequestScoped
-public class alunoBean {
+@SessionScoped
+public class AlunoBean{
 	
 
 		private Aluno aluno = new Aluno();
-		private alunoDao dao = new alunoDao();
-		
+		private AlunoDAO dao = new AlunoDAO();
 		private List<Aluno> alunos;
 		
 		//retorna os alunos do bacno
@@ -24,19 +22,11 @@ public class alunoBean {
 			return alunos;
 		}
 
-		public void setAlunos(List<Aluno> alunos) {
-			this.alunos = alunos;
-		}
-
-		public alunoDao getDao() {
-			return dao;
-		}
-
-		public void setDao(alunoDao dao) {
-			this.dao = dao;
-		}
-
 		public Aluno getAluno() {
+			if (aluno == null){
+				aluno = new Aluno();
+			}
+			
 			return aluno;
 		}
 
@@ -45,12 +35,15 @@ public class alunoBean {
 		}
 		
 		//salva aluno no banco
-		public String salvaAluno(Aluno aluno){
-			dao.add(aluno);
+		public String salvaAluno(){
+			dao.save(aluno);
+			aluno = new Aluno();
 			return "listar?faces-redirect=true";	
 		}
 		
-		public void excluir(Aluno aluno){
+		public String excluir(){
 			dao.remove(aluno);
+			aluno = new Aluno();
+			return "listar?faces-redirect=true";
 		}
 }

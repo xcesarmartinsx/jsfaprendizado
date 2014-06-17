@@ -1,12 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf140287465487962" configfile="/estudo/WebContent/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="*" id="pf140292628618487" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf140292628618488 pf140292630357790 pf140292658264096 pf140293198225098" path="*"/>
-  <nodes xsi:type="pageflow:PFPage" name="alunos/listar.xhtml" id="pf140292628618489" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf140292628618488" path="/alunos/listar.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="alunos/add.xhtml" id="pf140292630357791" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf140292630357790" path="/alunos/add.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" id="pf140292658264197" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf140292658264096" path="/index.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="alunos/editar.xhtml" id="pf140293198225099" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf140293198225098" path="/alunos/editar.xhtml"/>
-  <links id="pf140292628618488" target="pf140292628618489" source="pf140292628618487" outcome="listarAlunos"/>
-  <links id="pf140292630357790" target="pf140292630357791" source="pf140292628618487" outcome="addAlunos"/>
-  <links id="pf140292658264096" target="pf140292658264197" source="pf140292628618487" outcome="index"/>
-  <links id="pf140293198225098" target="pf140293198225099" source="pf140292628618487" outcome="editar"/>
-</pageflow:Pageflow>
+<pageflow:Pageflow xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf140287465487962" configfile="/estudo/WebContent/WEB-INF/faces-config.xml"/>

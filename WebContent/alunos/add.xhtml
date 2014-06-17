@@ -4,24 +4,20 @@
 	  xmlns:h="http://java.sun.com/jsf/html"
 	  xmlns:f="http://java.sun.com/jsf/core"
 	  xmlns:ui="http://java.sun.com/jsf/facelets">
-	  
 <h:head>
-
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Adicionar Aluno</title>
-	
+<title>Alunos</title>
 </h:head>
-	
-	<h:body>
-		<h2>Adicione um Novo Aluno</h2>
-		<h:form>
+<h:body>
+		<h:form id="form">
+		<h2>Aluno</h2>
+
 		
 			<h:panelGrid columns="2">
 				Nome:<h:inputText value="#{alunoBean.aluno.nome}"/>
 				Endereco:<h:inputText value="#{alunoBean.aluno.endereco}"/>
 				Telefone:<h:inputText value="#{alunoBean.aluno.telefone}"/>
 			</h:panelGrid>
-			<h:commandButton value="Salvar" action="#{alunoBean.salvaAluno(alunoBean.aluno)}"></h:commandButton>
+			<h:commandButton value="Salvar" action="#{alunoBean.salvaAluno}"></h:commandButton>
 			<h:commandLink value="Voltar" action="index"/>
 		</h:form>
 	</h:body>
