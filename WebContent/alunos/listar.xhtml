@@ -28,6 +28,7 @@
 			</h:column>
 			
 			<h:column>
+				<h:inputHidden value="#{aluno.id}" />
 				<f:facet name="header">Editar</f:facet>
 				<h:commandLink  value="Editar" action="add" >
 					<f:setPropertyActionListener value="#{aluno}" target="#{alunoBean.aluno}"/>
