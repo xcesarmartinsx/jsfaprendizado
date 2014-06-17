@@ -43,10 +43,6 @@ public class AlunoBean implements Serializable {
 		return "listar?faces-redirect=true";
 	}
 	
-	public String updateAluno() {
-		return "add";
-	}
-
 	public String excluir() {
 		dao.remove(aluno);
 		aluno = new Aluno();
