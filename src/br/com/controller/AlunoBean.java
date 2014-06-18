@@ -39,13 +39,11 @@ public class AlunoBean implements Serializable {
 	// salva aluno no banco
 	public String salvaAluno() {
 		dao.save(aluno);
-		aluno = new Aluno();
 		return "listar?faces-redirect=true";
 	}
 	
 	public String excluir() {
 		dao.remove(aluno);
-		aluno = new Aluno();
 		return "listar?faces-redirect=true";
 	}
 }
